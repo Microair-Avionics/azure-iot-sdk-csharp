@@ -143,7 +143,7 @@ jobs:
 
     condition: succeeded()
     pool:
-      vmImage: windows-2019
+      vmImage: windows-2022
     steps:
       - task: DownloadBuildArtifacts@0
         inputs:
@@ -163,7 +163,7 @@ jobs:
           OverWrite: true
 
       - script: |  
-          call "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\Tools\\VsDevCmd.bat"
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2022\\Enterprise\Common7\Tools\VsDevCmd.bat"
           sn -Vr *,31bf3856ad364e35
             
         displayName: 'Disable strong name validation'
